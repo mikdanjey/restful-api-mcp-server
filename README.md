@@ -13,6 +13,33 @@ A Model Context Protocol server for RESTful API operations and JSON Server. This
 - **TypeScript**: Full type safety and excellent developer experience
 - **Production Ready**: Includes build optimization, linting, and testing
 
+## Quick Start
+
+### Prerequisites
+
+- Node.js 20.0.0 or higher
+- Access to a Restful-API
+- Valid Restful-API credentials
+
+## Usage
+
+### Basic MCP Integration
+
+```json
+{
+  "mcpServers": {
+    "restful-api-mcp-server": {
+      "command": "npx",
+      "args": ["-y", "restful-api-mcp-server"],
+      "env": {
+        "API_BASE_URL": "https://jsonplaceholder.typicode.com",
+        "API_AUTH_TYPE": "none"
+      }
+    }
+  }
+}
+```
+
 ## Installation
 
 ### Local Installation
