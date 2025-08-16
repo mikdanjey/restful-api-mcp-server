@@ -1,0 +1,9 @@
+dist/
+node_modules/
+coverage/
+.kiro
+*.d.ts
+.tsbuildinfo
+eslint-report.json
+package-lock.json
+yarn.lock

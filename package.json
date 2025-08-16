@@ -1,0 +1,69 @@
+{
+  "name": "restful-api-mcp-server",
+  "version": "1.0.0",
+  "description": "A Model Context Protocol server for RESTful API operations and JSON Server",
+  "main": "dist/index.js",
+  "author": "Mikdanjey <mikdanjey@gmail.com> (MikdanTech.com)",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/mikdanjey/restful-api-mcp-server.git"
+  },
+  "bin": {
+    "mcp-restful-api-server": "dist/index.js"
+  },
+  "keywords": [
+    "mcp",
+    "model-context-protocol",
+    "rest-api",
+    "json-server",
+    "crud",
+    "typescript"
+  ],
+  "scripts": {
+    "setup": "npm run setup:env && npm install && npm run build",
+    "setup:env": "node -e \"const fs = require('fs'); if (!fs.existsSync('.env')) { fs.copyFileSync('.env.example', '.env'); console.log('Created .env file from .env.example - please update it with your configuration'); } else { console.log('.env file already exists'); }\"",
+    "validate": "npm run build:dev && node scripts/validate-config.js",
+    "build": "npm run clean && npm run type-check && tsc",
+    "build:dev": "npm run clean && tsc --incremental",
+    "build:prod": "npm run clean && npm run lint && npm run type-check && tsc --project tsconfig.prod.json",
+    "dev": "tsc --watch --incremental",
+    "start": "node dist/index.js",
+    "start:dev": "npm run build:dev && npm start",
+    "test": "jest --passWithNoTests",
+    "test:watch": "jest --watch",
+    "test:coverage": "jest --coverage --passWithNoTests",
+    "lint": "eslint src/**/*.ts tests/**/*.ts",
+    "lint:fix": "eslint src/**/*.ts tests/**/*.ts --fix",
+    "type-check": "tsc --noEmit",
+    "clean": "rimraf dist coverage eslint-report.json",
+    "prebuild": "npm run clean",
+    "postbuild": "echo 'Build completed successfully'",
+    "format": "prettier --log-level log --write .",
+    "prepack": "npm run build:prod",
+    "format:check": "prettier --check \"src/**/*.ts\" \"tests/**/*.ts\" \"*.{js,json,md}\"",
+    "clear": "rm -rf dist node_modules coverage .scannerwork package-lock.json yarn.lock next-env.d.ts yarn-error.log eslint-report.json output.log snowflake.log error.log"
+  },
+  "dependencies": {
+    "@modelcontextprotocol/sdk": "1.17.2",
+    "axios": "^1.6.0",
+    "dotenv": "16.6.1",
+    "zod": "3.22.0"
+  },
+  "devDependencies": {
+    "@types/dotenv": "^6.1.1",
+    "@types/jest": "^29.0.0",
+    "@types/node": "^20.0.0",
+    "@typescript-eslint/eslint-plugin": "^8.39.1",
+    "@typescript-eslint/parser": "^8.39.1",
+    "eslint": "^8.0.0",
+    "jest": "^29.0.0",
+    "prettier": "^3.6.2",
+    "rimraf": "^5.0.0",
+    "ts-jest": "^29.0.0",
+    "typescript": "^5.0.0"
+  },
+  "engines": {
+    "node": ">=20.0.0"
+  }
+}
