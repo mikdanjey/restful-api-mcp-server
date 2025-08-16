@@ -72,7 +72,7 @@ export class McpRestfulApiServer {
   constructor() {
     this.server = new Server(
       {
-        name: "mcp-restful-api-server",
+        name: "restful-api-mcp-server",
         version: "1.0.0",
       },
       {
@@ -510,7 +510,7 @@ function displayHelp(): void {
 ${packageJson.name} v${packageJson.version}
 ${packageJson.description}
 
-Usage: mcp-restful-api-server [options]
+Usage: restful-api-mcp-server [options]
 
 Options:
   -h, --help     Show this help message
@@ -534,32 +534,32 @@ Examples:
   # Using .env file (recommended)
   npm run setup
   # Edit .env file with your configuration
-  mcp-restful-api-server
+  restful-api-mcp-server
 
   # Using environment variables - Basic authentication
   API_BASE_URL=https://api.example.com \\
   API_AUTH_TYPE=basic \\
   API_BASIC_AUTH_USERNAME=user \\
   API_BASIC_AUTH_PASSWORD=pass \\
-  mcp-restful-api-server
+  restful-api-mcp-server
 
   # Using environment variables - Token authentication
   API_BASE_URL=https://api.example.com \\
   API_AUTH_TYPE=token \\
   API_AUTH_TOKEN=your-token-here \\
-  mcp-restful-api-server
+  restful-api-mcp-server
 
   # Using environment variables - No authentication (JSONPlaceholder)
   API_BASE_URL=https://jsonplaceholder.typicode.com \\
   API_AUTH_TYPE=none \\
-  mcp-restful-api-server
+  restful-api-mcp-server
 
   # Using environment variables - Local JSON Server
   API_BASE_URL=http://localhost:3000 \\
   API_AUTH_TYPE=none \\
-  mcp-restful-api-server
+  restful-api-mcp-server
 
-For more information, visit: https://github.com/your-org/mcp-restful-api-server
+For more information, visit: https://github.com/your-org/restful-api-mcp-server
 `);
 }
 

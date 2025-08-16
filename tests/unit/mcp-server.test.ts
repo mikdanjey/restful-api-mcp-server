@@ -156,7 +156,7 @@ describe("McpRestfulApiServer", () => {
     it("should create server instance with correct configuration", () => {
       expect(Server).toHaveBeenCalledWith(
         {
-          name: "mcp-restful-api-server",
+          name: "restful-api-mcp-server",
           version: "1.0.0",
         },
         {

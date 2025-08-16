@@ -15,26 +15,12 @@ A Model Context Protocol server for RESTful API operations and JSON Server. This
 
 ## Installation
 
-### Global Installation (Recommended)
-
-```bash
-# Install globally from npm (when published)
-npm install -g mcp-restful-api-server
-
-# Or install from source
-git clone <repository-url>
-cd mcp-restful-api-server
-npm install
-npm run build
-npm link
-```
-
 ### Local Installation
 
 ```bash
 # Clone the repository
-git clone <repository-url>
-cd mcp-restful-api-server
+git https://github.com/mikdanjey/restful-api-mcp-server.git
+cd restful-api-mcp-server
 
 # Install dependencies
 npm install
@@ -98,13 +84,13 @@ export API_BASIC_AUTH_PASSWORD="your-password"
 
 ```bash
 # If installed globally
-mcp-restful-api-server
+restful-api-mcp-server
 
 # If running from source
 npm start
 
 # With debug logging
-mcp-restful-api-server --debug
+restful-api-mcp-server --debug
 ```
 
 ## Configuration
@@ -131,7 +117,7 @@ The server can be configured using environment variables or a `.env` file. The `
 ### Command Line Options
 
 ```bash
-mcp-restful-api-server [options]
+restful-api-mcp-server [options]
 
 Options:
   -h, --help     Show help message
@@ -222,15 +208,15 @@ The server exposes API endpoints as discoverable MCP resources:
 
 ### Prerequisites
 
-- Node.js 18.0.0 or higher
+- Node.js 20.0.0 or higher
 - npm or yarn package manager
 
 ### Setup
 
 ```bash
 # Clone the repository
-git clone <repository-url>
-cd mcp-restful-api-server
+git clone https://github.com/mikdanjey/restful-api-mcp-server.git
+cd restful-api-mcp-server
 
 # Run the setup script (installs dependencies, creates .env, and builds)
 npm run setup
@@ -308,7 +294,7 @@ export API_BASE_URL="https://jsonplaceholder.typicode.com"
 export API_AUTH_TYPE="none"
 
 # Start the server
-mcp-restful-api-server
+restful-api-mcp-server
 
 # The server will provide tools to interact with JSONPlaceholder:
 # - GET /posts, /users, /comments, etc.
@@ -329,7 +315,7 @@ export API_BASE_URL="http://localhost:3000"
 export API_AUTH_TYPE="none"
 
 # Start the MCP server
-mcp-restful-api-server
+restful-api-mcp-server
 
 # The server will provide tools to interact with JSON Server:
 # - GET /posts, /users (retrieve data)
@@ -347,7 +333,7 @@ export API_AUTH_TYPE="token"
 export API_AUTH_TOKEN="ghp_your_github_token_here"
 
 # Start the server
-mcp-restful-api-server
+restful-api-mcp-server
 
 # The server will provide tools to interact with GitHub API:
 # - GET /user (get authenticated user)
@@ -440,6 +426,6 @@ MIT License - see the [LICENSE](LICENSE) file for details.
 
 ## Support
 
-- **Issues**: Report bugs and request features on [GitHub Issues](https://github.com/your-org/mcp-restful-api-server/issues)
+- **Issues**: Report bugs and request features on [GitHub Issues](https://github.com/your-org/restful-api-mcp-server/issues)
 - **Documentation**: Full documentation available in the [docs](docs/) directory
 - **Examples**: More examples available in the [examples](examples/) directory

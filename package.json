@@ -10,7 +10,7 @@
     "url": "https://github.com/mikdanjey/restful-api-mcp-server.git"
   },
   "bin": {
-    "mcp-restful-api-server": "dist/index.js"
+    "restful-api-mcp-server": "dist/index.js"
   },
   "keywords": [
     "mcp",
